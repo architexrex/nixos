@@ -1,0 +1,7 @@
+* {
+	font: "FiraMono Nerd Font 14"
+}
+
+window {
+	border: 2px;
+}:
