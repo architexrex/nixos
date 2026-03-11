@@ -1,20 +1,30 @@
 
 { config, pkgs, ... }: {
 
-	hardware = {
-		alsa = {
+	hardware.pulseaudio.enable = false;
+
+	hardware.enableAllFirmware = true;
+
+	security.rtkit.enable = true;
+
+	services = {
+		pipewire ={
 			enable = true;
-			enablePersistence = true; ###-SAVES VOL ON REBOOT-###
-			#enableOSSEmulation = true; ###-UNCOMMENT IF WOW AUDIO DOESNT WORK-###	
+			alsa.enable = true;
+			alsa.support32Bit = true;
+			
 		};
-		enableAllFirmware = true;  ###-ENSURE ALL DEVICES WORK-###
-	};
-	
-	environment.systemPackages = with pkgs; [
+	};	
 
 	
-	];
 
+	#hardware = {
+	#	alsa = {
+	#		enable = true;
+	#		enablePersistence = true; ###-SAVES VOL ON REBOOT-###
+	#		#enableOSSEmulation = true; ###-UNCOMMENT IF WOW AUDIO DOESNT WORK-###	
+	#	};
+	#};
 	###-THIS MAY FIX SOUND NOT RESETTING ON BOOT-###
 	#system.postBootCommands = ''
 	#	alsactl restore
