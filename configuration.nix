@@ -38,6 +38,7 @@ imports = [
 		systemd-boot.enable = true;
 		efi.canTouchEfiVariables = true;
 	};
+	
 
   	users.users.admiral = {
     		isNormalUser = true;
