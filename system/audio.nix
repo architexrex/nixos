@@ -1,12 +1,13 @@
 
 { config, pkgs, ... }: {
 
-	hardware.pulseaudio.enable = false;
+	hardware.pulseaudio.enable = false; #pulseaudio required for bluetooth headset
 
-	hardware.enableAllFirmware = true;
+	hardware.enableAllFirmware = true; #ensures all device firmware works
 
-	security.rtkit.enable = true;
+	security.rtkit.enable = true; #realtime kit for pulseaudio
 
+	#Enable pipewire with alsa for lightweight audio
 	services = {
 		pipewire ={
 			enable = true;
