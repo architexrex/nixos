@@ -37,10 +37,17 @@ imports = [
 		librewolf
 		vlc
 		
-		steam
 		legcord			#lightweight alternative discord client
 		spotify
 	];
+
+	programs.steam = {
+		enable = true;
+		extraCompatPackages = with pkgs; [
+			proton-ge-bin
+		];
+	};
+
 	boot.loader = {
 		systemd-boot.enable = true;
 		efi.canTouchEfiVariables = true;
