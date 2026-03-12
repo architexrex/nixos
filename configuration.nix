@@ -1,17 +1,24 @@
 
 { config, pkgs, ... }:
 
+let
+	#ADD I3 SUPPORT TO POLYBAR
+	myPolybar = pkgs.polybar.override {
+		i3Support = true;
+	};
+in
 {
 imports = [ 
 		./leviathan
 		./system
 		
-];
-		
-	# $ nix search wget
+];		
 	nixpkgs.config.allowUnfree = true; 		#needed for nvidia#
+	
+	#I3 Workspace support for polybar
 	environment.systemPackages = with pkgs; [
-		
+		myPolybar
+
 		zip
 		unzip
 		curl
@@ -23,8 +30,10 @@ imports = [
 		
 		feh 			# feh --bg-scale /path/to/wallpaper.jpg
 		rofi
-		polybar	
+		#polybar	
 		
+		maim 			#terminal screenshot utility
+		slop			#region selector for main
 
 		librewolf
 		vlc
@@ -33,7 +42,6 @@ imports = [
 		legcord			#lightweight alternative discord client
 		spotify
 	];
-
 	boot.loader = {
 		systemd-boot.enable = true;
 		efi.canTouchEfiVariables = true;

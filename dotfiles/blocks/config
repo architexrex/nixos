@@ -1,5 +1,0 @@
-[cpu_usage]
-label=CPU
-interval=30
-min_width=CPU 100.00%
-seperator=true
