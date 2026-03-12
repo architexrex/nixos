@@ -23,7 +23,7 @@ imports = [
 		
 		feh 			# feh --bg-scale /path/to/wallpaper.jpg
 		rofi
-		i3blocks
+		polybar	
 		
 
 		librewolf

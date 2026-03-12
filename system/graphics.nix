@@ -1,7 +1,7 @@
 { config, pkgs, ... }: {
 
 	hardware.graphics.enable = true;
-	hardware.graphics.enable32Bit = true;
+	hardware.graphics.enable32Bit = true; #For 32Bit Games
 	
 	services = {
 		xserver = {
@@ -13,7 +13,7 @@
 
 			displayManager.lightdm = {
 				enable = true;
-				#background =    
+				background = /etc/nixos/media/cottage.jpg;   
 				#can also switch to gtk greeter#
 			};
 			
@@ -25,6 +25,14 @@
 			backend = "glx";
 			vSync = true;
 			
+			activeOpacity = 0.96;
+			inactiveOpacity = 0.94;
+			menuOpacity = 1;
+			opacityRules = [
+				"100:class_g = 'librewolf'"
+				"85:class_g = 'kitty'"
+			];
+
 		};
 	};
 	
