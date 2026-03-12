@@ -29,8 +29,7 @@ imports = [
 
 		
 		feh 			# feh --bg-scale /path/to/wallpaper.jpg
-		rofi
-		#polybar	
+		rofi	
 		
 		maim 			#terminal screenshot utility
 		slop			#region selector for main

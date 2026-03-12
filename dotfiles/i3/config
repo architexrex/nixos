@@ -9,30 +9,25 @@ exec --no-startup-id nm-applet
 #USER
 exec_always --no-startup-id feh --bg-fill /etc/nixos/media/neoTokyo.png
 exec_always --no-startup-id /etc/nixos/dotfiles/polybar/launch.sh
+
+#ASSIGN APP WORKSPACES
+assign [class="steam"] 7
+assign [class="Spotify"] 8
+assign [class="legcord"] 9 
 #APPS
 exec --no-startup-id librewolf
 exec --no-startup-id kitty
+exec --no-startup-id spotify
+exec --no-startup-id legcord
+exec --no-startup-id steam
+
+
 #########################################################
 #		       VISUALS				#
 #########################################################
 #Font for window headers
-font pango:FiraMono Nerd Font:style=Bold 12
+font pango:FiraMono Nerd Font:style=Bold 14
 
-#bar {
-#	font pango:FiraMono Nerd Font:style=Bold 12
-#	#status_command i3status
-#	status_command i3blocks
-#
-#	colors {
-#		background #1B3040
-#		statusline #cdd6f4		
-#				  #BORDER BG	  Font	
-#				  #d5c4a1 #000000 #000000 
-#		focused_workspace #30588A #30588A #000000 
-#		inactive_workspace #132238 #132238 #000000 
-#	}
-#}
-# GAPS
 gaps inner 10
 #gaps outer 3
 
@@ -48,10 +43,10 @@ gaps right 6
 default_border pixel 1
 default_floating_border pixel 1
 # FOCUSED			BORDER  BACKGR  TEXT    INDICAT #CHILD-BORDER
-client.focused			#f5f5f5 #98559E #444444 #f5f5f5 
-# UNFOCUSED 				#D995CE
-client.unfocused		#F2E2A2 #331B47 #000000 #d5c4a1
-client.focused_inactive		#30558A #5EDDE6 #000000 #d5c4a1
+client.focused			#6CE0E0 #6CE0E0 #444444 #f5f5f5 
+# UNFOCUSED
+client.unfocused		#E86DCB #E86DCB #000000 #d5c4a1
+client.focused_inactive		#E86DCB #E86DCB #000000 #d5c4a1
 client.urgent			#ff6b6b #ff6b6b #ffffff #ff6b6b
 client.background		#05182B
 # STEAM BORDERS FIX
@@ -61,11 +56,16 @@ for_window [class="steamwebhelper"] border pixel 2
 #		       WORKSPACES			#
 #########################################################
 # WORKSPACE VARIABLES
-set $ws1 "1:Browse"
-set $ws2 "2:Workspace"
-set $ws3 "3:Disc"
-set $ws4 "4:Steam"
-set $ws5 "5:Game"
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+
 # SWITCH WORKSPACES
 bindsym --whole-window $mod+button4 workspace prev
 bindsym --whole-window $mod+button5 workspace next
@@ -77,7 +77,13 @@ bindsym $mod+2 workspace $ws2
 bindsym $mod+3 workspace $ws3
 bindsym $mod+4 workspace $ws4
 bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
 # MOVE CONTAINER
+bindsym --whole-window $mod+Shift+button4 move container to workspace prev
+bindsym --whole-window $mod+Shift+button5 move container to workspace next
 bindsym $mod+Shift+z move container to workspace prev
 bindsym $mod+Shift+x move container to workspace next
 bindsym $mod+Shift+1 move container to workspace number $ws1
@@ -85,6 +91,10 @@ bindsym $mod+Shift+2 move container to workspace number $ws2
 bindsym $mod+Shift+3 move container to workspace number $ws3
 bindsym $mod+Shift+4 move container to workspace number $ws4
 bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9
 #########################################################
 #		       APP-KEYBINDINGS			#
 #########################################################

@@ -2,9 +2,13 @@
 
 # Terminate already running bar
 pkill polybar
-
+#pkill polybar
 # Wait until the processes have been shut down
-while pgrep -u $UID -X polybar >/dev/null; do sleep 1; done
+while pgrep -x polybar >/dev/null; do sleep 0.1; done
 
-# Launch Polybar
-polybar main -c $(dirname $0)/config.ini &
+# Launch Left
+polybar left &
+# Launch Center
+polybar center &
+# Launch Right
+polybar right &
