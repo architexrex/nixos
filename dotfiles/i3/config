@@ -3,39 +3,36 @@ set $mod Mod4
 ##########################################################		       
 #		      STARTUP				 #
 ##########################################################
-#SYS
+# SYS #
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id nm-applet 
-#USER
-exec_always --no-startup-id feh --bg-fill /etc/nixos/media/neoTokyo.png
+# USER #
+exec_always --no-startup-id feh --bg-fill /etc/nixos/media/vaporMountain.jpg
 exec_always --no-startup-id /etc/nixos/dotfiles/polybar/launch.sh
 
-#ASSIGN APP WORKSPACES
+# APP WORKSPACES #
 assign [class="steam"] 7
 assign [class="Spotify"] 8
 assign [class="legcord"] 9 
-#APPS
+# APPS #
 exec --no-startup-id librewolf
 exec --no-startup-id kitty
 exec --no-startup-id spotify
 exec --no-startup-id legcord
 exec --no-startup-id steam
-
-
 #########################################################
 #		       VISUALS				#
 #########################################################
-#Font for window headers
+# WIN HEADERS/GENERAL FONT #
 font pango:FiraMono Nerd Font:style=Bold 14
 
-gaps inner 10
+# GAPS #
+gaps inner 8
 #gaps outer 3
-
 gaps top 4
-#bottom must leave space for polybar
 gaps bottom 26
-gaps left 6
-gaps right 6
+gaps left 4
+gaps right 4
 
 # NO BORDERS IF 1 WINDOW
 #smart_borders yes
@@ -43,19 +40,18 @@ gaps right 6
 default_border pixel 1
 default_floating_border pixel 1
 # FOCUSED			BORDER  BACKGR  TEXT    INDICAT #CHILD-BORDER
-client.focused			#6CE0E0 #6CE0E0 #444444 #f5f5f5 
-# UNFOCUSED
-client.unfocused		#E86DCB #E86DCB #000000 #d5c4a1
+client.focused			#FFE699 #FFE699 #FF3699 #f5f5f5 
+client.unfocused		#394887 #08103B #000000 #08103B  
 client.focused_inactive		#E86DCB #E86DCB #000000 #d5c4a1
 client.urgent			#ff6b6b #ff6b6b #ffffff #ff6b6b
-client.background		#05182B
+client.background		#1D1B29
 # STEAM BORDERS FIX
 for_window [class="steam"] border pixel 2
 for_window [class="steamwebhelper"] border pixel 2
 #########################################################
 #		       WORKSPACES			#
 #########################################################
-# WORKSPACE VARIABLES
+# WORKSPACE VARIABLES #
 set $ws1 "1"
 set $ws2 "2"
 set $ws3 "3"
@@ -66,7 +62,7 @@ set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
 
-# SWITCH WORKSPACES
+# SWITCH WORKSPACES #
 bindsym --whole-window $mod+button4 workspace prev
 bindsym --whole-window $mod+button5 workspace next
 bindsym $mod+z workspace prev
@@ -81,7 +77,7 @@ bindsym $mod+6 workspace $ws6
 bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9
-# MOVE CONTAINER
+# MOVE CONTAINER #
 bindsym --whole-window $mod+Shift+button4 move container to workspace prev
 bindsym --whole-window $mod+Shift+button5 move container to workspace next
 bindsym $mod+Shift+z move container to workspace prev
@@ -98,37 +94,37 @@ bindsym $mod+Shift+9 move container to workspace number $ws9
 #########################################################
 #		       APP-KEYBINDINGS			#
 #########################################################
-# ROFI
+# ROFI #
 bindsym $mod+d exec "rofi -modi drun,run -show drun"
-# KITTY
-bindsym $mod+Return exec kitty -d /etc/nixos/
-# LIBREWOLF
+# KITTY #
+bindsym $mod+Return exec kitty -d ~/ 
+# LIBREWOLF #
 bindsym $mod+b exec librewolf
-bindsym Print exec --no-startup-id maim -s ~/screenshots/screenshot-$(date +%Y%m%d_%H%M%S).png
+bindsym Print exec --no-startup-id maim -s ~/media/screenshots/screenshot-$(date +%Y%m%d_%H%M%S).png
 #########################################################
 #		       KEYBINDS 			#
 #########################################################
-# I3 Restart
+# I3 Restart #
 bindsym $mod+Shift+r restart
-# Kill Window
+# Kill Window #
 bindsym $mod+q kill
-# Fullscreen
+# Fullscreen #
 bindsym $mod+f fullscreen toggle
 #########################################################
 #		       LAYOUT & ORIENTATION		#
 #########################################################
-# Split Horizontal
+# Split Horizontal #
 bindsym $mod+h split h
-# Split Vertical
+# Split Vertical #
 bindsym $mod+v split v
-# Change Stacking / Split
+# Change Stacking / Split #
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 #########################################################
 #		       FLOATING				#
 #########################################################
-# TOGGLE FLOAT/TILE
+# TOGGLE FLOAT/TILE #
 bindsym $mod+Shift+space floating toggle
 # DRAGGING (default is mouse + mod on titlebar)
 floating_modifier $mod

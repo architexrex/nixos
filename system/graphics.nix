@@ -13,7 +13,7 @@
 
 			displayManager.lightdm = {
 				enable = true;
-				background = /etc/nixos/media/cottage.jpg;   
+				background = /etc/nixos/media/vaporMountain.jpg;   
 				#can also switch to gtk greeter#
 			};
 			

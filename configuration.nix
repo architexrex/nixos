@@ -26,7 +26,7 @@ imports = [
 		git
 		htop
 		kitty
-
+		neofetch
 		
 		feh 			# feh --bg-scale /path/to/wallpaper.jpg
 		rofi	
