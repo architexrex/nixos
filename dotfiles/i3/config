@@ -37,12 +37,12 @@ gaps right 4
 # NO BORDERS IF 1 WINDOW
 smart_borders yes
 # BORDERS
-default_border pixel 2
-default_floating_border pixel 2
+default_border pixel 1
+default_floating_border pixel 1
 # FOCUSED			BORDER  BACKGR  TEXT    INDICAT #CHILD-BORDER
-client.focused			#FFE699 #FFE699 #FFE699 #FFE699 
-client.unfocused		#00000000 #00000000 #000000 #000000  
-client.focused_inactive		#00000000 #00000000 #000000 #000000
+client.focused			#FFE699 #FFFFD4 #FFFEC9 #FFE699 
+client.unfocused		#00000000 #00000000 #FFFFD4 #00000000  
+client.focused_inactive		#00000000 #00000000 #FFFFD4 #00000000
 client.urgent			#B53333 #B53333 #000000 #B53333
 client.background		#363636
 # STEAM BORDERS FIX

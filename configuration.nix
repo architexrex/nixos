@@ -11,7 +11,7 @@ in
 imports = [ 
 		./leviathan
 		./system
-		
+		./security		
 ];		
 	nixpkgs.config.allowUnfree = true; 		#needed for nvidia#
 	
