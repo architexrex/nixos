@@ -35,16 +35,16 @@ gaps left 4
 gaps right 4
 
 # NO BORDERS IF 1 WINDOW
-#smart_borders yes
+smart_borders yes
 # BORDERS
-default_border pixel 1
-default_floating_border pixel 1
+default_border pixel 2
+default_floating_border pixel 2
 # FOCUSED			BORDER  BACKGR  TEXT    INDICAT #CHILD-BORDER
-client.focused			#FFE699 #FFE699 #FF3699 #f5f5f5 
-client.unfocused		#394887 #08103B #000000 #08103B  
-client.focused_inactive		#E86DCB #E86DCB #000000 #d5c4a1
-client.urgent			#ff6b6b #ff6b6b #ffffff #ff6b6b
-client.background		#1D1B29
+client.focused			#FFE699 #FFE699 #FFE699 #FFE699 
+client.unfocused		#00000000 #00000000 #000000 #000000  
+client.focused_inactive		#00000000 #00000000 #000000 #000000
+client.urgent			#B53333 #B53333 #000000 #B53333
+client.background		#363636
 # STEAM BORDERS FIX
 for_window [class="steam"] border pixel 2
 for_window [class="steamwebhelper"] border pixel 2
