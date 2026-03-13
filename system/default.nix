@@ -7,7 +7,7 @@ imports = [
 	./networking.nix
 	./misc.nix
 	./fonts.nix
-
+	./xdg.nix
 
 
 ];
