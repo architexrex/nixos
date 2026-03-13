@@ -7,8 +7,8 @@ set $mod Mod4
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id nm-applet 
 # USER #
-exec_always --no-startup-id feh --bg-fill /etc/nixos/media/vaporMountain.jpg
-exec_always --no-startup-id /etc/nixos/dotfiles/polybar/launch.sh
+exec_always --no-startup-id feh --bg-fill /etc/nixos/notnix/media/mtn.jpg
+exec_always --no-startup-id /etc/nixos/notnix/scripts/polybar/launch.sh
 
 # APP WORKSPACES #
 assign [class="steam"] 7

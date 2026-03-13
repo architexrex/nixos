@@ -1,9 +1,9 @@
 { config, ... }: {
 	
 	# USEFUL COMMANDS #  
-	# clamscan -r -move=/var/quarantine /home
+	# clamscan -r --move=/var/quarantine /home
 	# cat /var/log/clamav/clamd.log
-	# ls /var/quanrantine
+	# ls -a /var/quanrantine
 	# sudo rm -r /var/quarantine/*
 	
 	# INCREASE INOTIFY LIMIT SO CLAMAV CAN SCAN ALL DIRS AND FILES #
@@ -21,7 +21,7 @@
 
 	services.clamav = {
 		
-		clamonacc.enable = true; #on access scanning
+		#clamonacc.enable = true; #on access scanning
 
 		daemon = {
 			enable = true;
@@ -35,17 +35,17 @@
 				DetectPUA = true;
 
 				# ONACCESS SCANNING #
-				OnAccessExcludeUname = "clamav";
-				OnAccessPrevention = true;
+				#OnAccessExcludeUname = "clamav";
+				#OnAccessPrevention = true;
 				# DIRS WITH ONACCESS ENABLED #
-				OnAccessIncludePath = [
-					"/home"
-					"/tmp"
-				];
+				#OnAccessIncludePath = [
+				#	"/home"
+				#	"/tmp"
+				#];
 
 				# PERFORMANCE TUNING - NEEDED FOR ONACCESS #
-				MaxThreads = 20;
-				MaxQueue = 200;
+				#MaxThreads = 20;
+				#MaxQueue = 200;
 			};
 		};
 		updater = {
