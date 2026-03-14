@@ -14,7 +14,11 @@
 			
 			open = true; #Needed for new drivers#
 
-			package = config.boot.kernelPackages.nvidiaPackages.latest;
+		package = config.boot.kernelPackages.nvidia_x11_vulkan_beta;		
+
+
+		#package = config.boot.kernelPackages.nvidiaPackages.latest;
+			
 		};
 	};
 	

@@ -49,6 +49,8 @@ imports = [
 		kitty
 		neofetch
 		
+		python3 # TEST FOR WOW #
+
 		feh 			# feh --bg-scale /path/to/wallpaper.jpg
 		rofi	
 		
