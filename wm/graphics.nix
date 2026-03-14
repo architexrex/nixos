@@ -36,17 +36,5 @@
 		};
 	};
 	
-	
-	#NVIDIA#
-	hardware = {
-		nvidia = {
-			nvidiaSettings = false; 	#disable gui app#
-			modesetting.enable = true; 
-			
-			open = true; #Needed for new drivers#
 
-			package = config.boot.kernelPackages.nvidiaPackages.latest;
-		};
-	};
-	services.xserver.videoDrivers = [ "nvidia" ];
 }

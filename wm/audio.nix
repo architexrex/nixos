@@ -1,11 +1,13 @@
 
 { config, pkgs, ... }: {
+	
+	# ENSURE DEVICE FIRMWARE WORKS # 
+	hardware.enableAllFirmware = true;
 
-	hardware.enableAllFirmware = true; #ensures all device firmware works
+	# PULSEAUDIO USES THIS #
+	security.rtkit.enable = true;
 
-	security.rtkit.enable = true; #realtime kit for pulseaudio
-
-	#Enable pipewire with alsa for lightweight audio
+	# PIPEWIRE WITH ALSA > PULSE #
 	services = {
 		pipewire ={
 			enable = true;

@@ -9,20 +9,41 @@ let
 in
 {
 imports = [ 
-		./leviathan
-		./core
-		./security		
+		./hosts
+		./pkgs
+		./sec
+		./sys
+		./wm		
 ];		
-	nixpkgs.config.allowUnfree = true; 		#needed for nvidia#
+# TESTING ENV DOT FILES #
+#environment.etc."/etc/xdg/nvim/init.lua".source = ./notnix/dots/nvim/init.lua;
+	# MANUAL NVIM #
+	programs = {
+		neovim = {
+			enable = true;
+			configure = {
+				customLuaRC = ''
+				vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+      				
+				vim.opt.guicursor =
+        			"n:block-blinkon500-blinkoff500," ..
+		       		"i:ver25-blinkon500-blinkoff500," ..
+		        	"v:block-blinkon500-blinkoff500," ..
+		       	 	"c:hor20-blinkon500-blinkoff500," ..
+			        "r:hor20-blinkon500-blinkoff500"	
+				'';
+			};
+		};
+	};
 	
-	#I3 Workspace support for polybar
+	
+
 	environment.systemPackages = with pkgs; [
-		myPolybar
+		myPolybar  # import myPolybar var from above #
 
 		zip
 		unzip
 		curl
-		neovim
 		git
 		htop
 		kitty
@@ -41,34 +62,6 @@ imports = [
 		spotify
 	];
 
-	programs.steam = {
-		enable = true;
-		extraCompatPackages = with pkgs; [
-			proton-ge-bin
-		];
-	};
-
-	boot.loader = {
-		systemd-boot.enable = true;
-		efi.canTouchEfiVariables = true;
-	};
-	
-
-  	users.users.admiral = {
-    		isNormalUser = true;
-    		description = "admiral";
-    		extraGroups = [ 
-			"networkmanager" 
-			"wheel"
-			"audio"
-			"video"
-			"input"
-			"storage"
-			#"lp" #printer access
-		];
-		#packages = with pkgs; [];
-  	};
- 	
 #---------------------------------------------------------#
 	time.timeZone = "America/Los_Angeles";
 #---------------------------------------------------------#

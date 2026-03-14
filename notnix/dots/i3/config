@@ -11,15 +11,15 @@ exec_always --no-startup-id feh --bg-fill /etc/nixos/notnix/media/mtn.jpg
 exec_always --no-startup-id /etc/nixos/notnix/scripts/polybar/launch.sh
 
 # APP WORKSPACES #
-assign [class="steam"] 7
+assign [class="steam"] 5
 assign [class="Spotify"] 8
 assign [class="legcord"] 9 
 # APPS #
-exec --no-startup-id librewolf
-exec --no-startup-id kitty
-exec --no-startup-id spotify
-exec --no-startup-id legcord
-exec --no-startup-id steam
+#exec --no-startup-id librewolf
+#exec --no-startup-id kitty
+#exec --no-startup-id spotify
+#exec --no-startup-id legcord
+#exec --no-startup-id steam
 #########################################################
 #		       VISUALS				#
 #########################################################
